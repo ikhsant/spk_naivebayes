@@ -89,7 +89,6 @@ $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'
      <input class="form-control" type="password" name="pass" placeholder="Masukan Password" required>
    </div>
      <button class="btn btn-primary" type="submit" name="submit" ><i class="fa fa-sign-in"></i> Login</button>
-     <a href="survei.php" class="btn btn-success" type="submit" name="submit" ><i class="fa fa-edit"></i> Survei</button>
  </form>
 </body>
 </html>
