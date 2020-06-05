@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2020 at 08:37 PM
+-- Generation Time: Jun 05, 2020 at 10:37 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -143,19 +143,18 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL,
   `nis` varchar(255) NOT NULL,
   `nama_siswa` varchar(255) NOT NULL,
-  `tempat_lahir` varchar(255) NOT NULL,
-  `tanggal_lahir` date NOT NULL,
-  `kelas` varchar(255) NOT NULL
+  `kelas` varchar(255) NOT NULL,
+  `klasifikasi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nis`, `nama_siswa`, `tempat_lahir`, `tanggal_lahir`, `kelas`) VALUES
-(1, '1002', 'Subhan Subhana', 'Sukabumi', '2020-06-03', 'IPS 3'),
-(3, '1003', 'Saepudin', 'Sukabumi', '2020-06-13', 'IPA 1'),
-(4, '1001', 'Muhammad Mahmud', 'Sukabumi', '2020-06-02', 'IPS 3');
+INSERT INTO `siswa` (`id_siswa`, `nis`, `nama_siswa`, `kelas`, `klasifikasi`) VALUES
+(1, '1002', 'Subhan Subhana', 'IPS 3', 'KLASIFIKASI 1'),
+(3, '1003', 'Saepudin', 'IPA 1', 'KLASIFIKASI 2'),
+(4, '1001', 'Muhammad Mahmud', 'IPS 3', 'KLASIFIKASI 1');
 
 -- --------------------------------------------------------
 

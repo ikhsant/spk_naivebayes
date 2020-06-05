@@ -69,6 +69,40 @@ $jumlah_training = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM sample"));
 </div>
 <?php } ?>
 <!-- end user -->
+<?php if($_SESSION['akses_level'] == "siswa"){ ?>
+    <?php $id_siswa = $_SESSION['id_user'] ?>
+    <?php $siswa = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM siswa WHERE id_siswa = '$id_siswa' ")) ?>
+    <?php $query_nilai = mysqli_query($conn,"
+        SELECT * FROM nilai 
+        JOIN matpel
+        ON matpel.id_matpel = nilai.id_matpel
+        WHERE nilai.id_siswa = '$id_siswa' 
+    ") ?>
+    <div class="row">
+
+    <div class="col-sm-12">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <h2>Selamat Datang <?= $_SESSION['nama'] ?></h2>
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th>MATA PELAJARAN</th>
+                        <th>NILAi</th>
+                    </tr>
+                    <?php foreach ($query_nilai as $nilai): ?>
+                        <tr>
+                            <td><?= $nilai['nama_matpel'] ?></td>
+                            <td><?= $nilai['nilai'] ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </table>
+                <h3>Anda masuk ke <b><?= $siswa['klasifikasi'] ?></b></h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+<?php } ?>
 
 <!-- <canvas id="perbandingan_pengajuan" height="200px"></canvas> -->
 

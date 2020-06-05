@@ -157,6 +157,10 @@ if (isset($_GET['proses'])) {
 
 					<?php if (isset($_GET['proses'])): ?>
 						<td class="bg-success"><?= $hasil[$row1] ?></td>
+						<?php
+						$id_siswa = $value1['id_siswa'];
+						mysqli_query($conn,"UPDATE siswa SET klasifikasi = '$hasil[$row1]' WHERE id_siswa = '$id_siswa' ") 
+						?>
 					<?php else: ?>
 						<td class="bg-danger"></td>
 					<?php endif ?>

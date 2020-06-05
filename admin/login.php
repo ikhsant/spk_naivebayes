@@ -57,17 +57,33 @@ $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'
     if(isset($_POST['submit'])){
       $user = mysqli_real_escape_string($conn,$_POST["user"]);
       $pass = mysqli_real_escape_string($conn,sha1($_POST['pass']));
+      $pass2 = mysqli_real_escape_string($conn,$_POST['pass']);
+      
       $result = mysqli_query($conn,"SELECT * FROM user WHERE username = '$user' AND password = '$pass' ");
-      $row = mysqli_fetch_assoc($result);
+      $row    = mysqli_fetch_assoc($result);
+
+      // login siswa
+      $result2 = mysqli_query($conn,"SELECT * FROM siswa WHERE nis = '$user' AND nis = '$pass2' ");
+      $row2    = mysqli_fetch_assoc($result2);
 
       // cek di db user
       if(mysqli_num_rows($result) > 0){
-        $_SESSION['username'] = $user;
-        $_SESSION['id_user'] = $row['id_user'];
-        $_SESSION['foto'] = $row['foto'];
-        $_SESSION['nama'] = $row['nama_user'];
+        $_SESSION['username']    = $user;
+        $_SESSION['id_user']     = $row['id_user'];
+        $_SESSION['foto']        = $row['foto'];
+        $_SESSION['nama']        = $row['nama_user'];
         $_SESSION['akses_level'] = $row['akses_level'];
-        $_SESSION['pesan'] = 'Selamat Datang '.$row['nama_user'].' !';
+        $_SESSION['pesan']       = 'Selamat Datang '.$row['nama_user'].' !';
+        // Redirect user to index.php
+        echo '<script language="javascript">
+                window.location.href = "index.php"
+              </script>';
+      }if(mysqli_num_rows($result2) > 0){
+        $_SESSION['username']    = $row2['nama_siswa'];
+        $_SESSION['id_user']     = $row2['id_siswa'];
+        $_SESSION['nama']        = $row2['nama_siswa'];
+        $_SESSION['akses_level'] = 'siswa';
+        $_SESSION['pesan']       = 'Selamat Datang '.$row2['nama_siswa'].' !';
         // Redirect user to index.php
         echo '<script language="javascript">
                 window.location.href = "index.php"
