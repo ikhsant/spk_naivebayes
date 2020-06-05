@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="index.php" style="padding: 4px!important">
