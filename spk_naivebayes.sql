@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2020 at 10:37 PM
+-- Generation Time: Jun 06, 2020 at 07:43 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -98,7 +98,9 @@ INSERT INTO `nilai` (`id_nilai`, `id_siswa`, `id_matpel`, `nilai`) VALUES
 
 CREATE TABLE `sample` (
   `id_sample` int(11) NOT NULL,
+  `nis` varchar(255) DEFAULT NULL,
   `nama_sample` varchar(255) NOT NULL,
+  `kelas` varchar(255) DEFAULT NULL,
   `keterangan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -106,10 +108,10 @@ CREATE TABLE `sample` (
 -- Dumping data for table `sample`
 --
 
-INSERT INTO `sample` (`id_sample`, `nama_sample`, `keterangan`) VALUES
-(1, 'Sample 1', 'Data Sample 1'),
-(2, 'Sample 2', 'Data Sample 2'),
-(3, 'Sample 3', 'Data Sample 3');
+INSERT INTO `sample` (`id_sample`, `nis`, `nama_sample`, `kelas`, `keterangan`) VALUES
+(1, '123456', 'Sample 1', 'IPA 1', 'TIDAK RANK'),
+(2, '123457', 'Sample 2', 'IPA 2', 'RANK'),
+(3, '123458', 'Sample 3', 'IPA 3', 'RANK');
 
 -- --------------------------------------------------------
 
