@@ -115,6 +115,7 @@ if (isset($_GET['proses'])) {
 					<?php foreach ($query_matpel as $matpel): ?>
 						<th><?= $matpel['nama_matpel'] ?></th>
 					<?php endforeach ?>
+					<th>KETERANGAN</th>
 				</tr>
 				<?php foreach ($sample_all as $sample_row => $value_sample): ?>
 				<tr>
@@ -122,6 +123,7 @@ if (isset($_GET['proses'])) {
 					<?php foreach ($value_sample['nilai'] as $nilai_sample_row => $value_nila_sample): ?>
 						<td><?= $value_nila_sample ?></td>
 					<?php endforeach ?>
+					<td><?= $value_sample['keterangan'] ?></td>
 				</tr>
 				<?php endforeach ?>
 

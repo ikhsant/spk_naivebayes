@@ -7,7 +7,7 @@ include "../include/header.php";
 $xcrud->table('siswa');
 $xcrud->table_name('Data Siswa');
 $xcrud->fields('klasifikasi',true);
-$xcrud->columns('klasifikasi',true);
+// $xcrud->columns('klasifikasi',true);
 
 $xcrud->unset_view();
 $xcrud->unset_csv();
