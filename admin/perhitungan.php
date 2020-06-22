@@ -8,6 +8,7 @@ $status_error_sample = false;
 $query_matpel = mysqli_query($conn,"SELECT * FROM matpel ORDER BY id_matpel ASC");
 $jumlah_matpel = mysqli_num_rows($query_matpel);
 $query_klasifikasi = mysqli_query($conn,"SELECT * FROM klasifikasi");
+
 $klasifikasi = [];
 foreach ($query_klasifikasi as $klasifikasi_row) {
 	$klasifikasi[] = $klasifikasi_row['nama_klasifikasi'];
@@ -40,21 +41,11 @@ for ($i=0; $i < $query_sample->num_rows ; $i++) {
 
 }
 
-$sample_semua = [];
-// print_r($klasifikasi);
-// print_r($sample_all);
-foreach ($sample_all as $row_sample => $value_sample) {
-	$sample_semua[] = $value_sample['nilai'];
-}
-// echo "<pre>";
-// print_r($sample_semua);
-// echo "</pre>";
+
 
 $query_siswa = mysqli_query($conn,"SELECT id_siswa,nama_siswa FROM siswa");
 
 $siswa_all = [];
-
-
 for ($i=0; $i < $query_siswa->num_rows ; $i++) { 
 	$siswa = mysqli_fetch_assoc($query_siswa);
 
@@ -76,11 +67,25 @@ for ($i=0; $i < $query_siswa->num_rows ; $i++) {
 
 }
 
-// echo "<pre>";
 $siswa_semua = [];
 foreach ($siswa_all as $row => $value) {
 	$siswa_semua[] = $value['nilai'];
 }
+
+$sample_semua = [];
+foreach ($sample_all as $row_sample => $value_sample) {
+	$sample_semua[] = $value_sample['nilai'];
+}
+
+$sample_klasifikasi = [];
+foreach ($sample_all as $row_sample => $value_sample) {
+	$sample_klasifikasi[] = $value_sample['keterangan'];
+}
+
+// echo "<pre>";
+// print_r($siswa_semua);
+// print_r($sample_semua);
+// print_r($sample_klasifikasi);
 // echo "</pre>";
 
 
@@ -88,15 +93,15 @@ foreach ($siswa_all as $row => $value) {
 if (isset($_GET['proses'])) {
 
 	$classifier = new NaiveBayes();
-	$classifier->train($sample_semua, $klasifikasi);
+	$classifier->train($sample_semua, $sample_klasifikasi);
 	$hasil = $classifier->predict($siswa_semua);
 
 	// echo "<pre>";
 	// print_r($hasil);
 	// echo "</pre>";
 }	
-
 #################
+
 ?>
 <?php if ($status_error_sample): ?>
 	<div class="panel panel-default">
