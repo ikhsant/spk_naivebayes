@@ -17,7 +17,7 @@
             </a>
             <?php if($_SESSION['akses_level'] == "admin"){ ?>
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
+                    <!-- <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-users"></span> SISWA <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="siswa.php"><span class="fa fa-users"></span> Siswa</a></li>
@@ -33,12 +33,15 @@
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-gears"></span> NAIVEBAYES <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="klasifikasi.php"><span class="fa fa-bookmark"></span> Klasifikasi</a></li>
-                            <li><a href="perhitungan.php"><span class="fa fa-bookmark"></span> Perhitungan</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="matpel.php"><span class="fa fa-book"></span> Mata Pelajaran</a></li>
+                        <ul class="dropdown-menu"> -->
+                            <!-- <li><a href="klasifikasi.php"><span class="fa fa-bookmark"></span> Klasifikasi</a></li> -->
+                            <!-- <li><a href="perhitungan.php"><span class="fa fa-bookmark"></span> Perhitungan</a></li> -->
+                     <!--    </ul>
+                    </li> -->
+                    <!-- <li><a href="matpel.php"><span class="fa fa-book"></span> Mata Pelajaran</a></li> -->
+                    <li><a href="import_siswa.php"><span class="fa fa-book"></span> Import Siswa</a></li>
+                    <li><a href="import_sample.php"><span class="fa fa-book"></span> Import Sample</a></li>
+                    <li><a href="perhitungan2.php"><span class="fa fa-book"></span> Perhitungan</a></li>
 
                 </ul>
             <?php } ?>
