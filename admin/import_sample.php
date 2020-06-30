@@ -40,9 +40,9 @@ if(isset($_POST['submit'])){
 			$nbs          = $sheetData[$i]['8'];
 			$nbtq         = $sheetData[$i]['9'];
 			$nfiqih       = $sheetData[$i]['10'];
-			$nfiqih       = $sheetData[$i]['11'];
+			$nipa         = $sheetData[$i]['11'];
 			$nips         = $sheetData[$i]['12'];
-			$nips         = $sheetData[$i]['13'];
+			$nmtk         = $sheetData[$i]['13'];
 			$npjok        = $sheetData[$i]['14'];
 			$npkn         = $sheetData[$i]['15'];
 			$nprakarya    = $sheetData[$i]['16'];
