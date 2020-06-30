@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2020 at 07:43 PM
+-- Generation Time: Jun 30, 2020 at 03:51 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -24,94 +24,82 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `klasifikasi`
+-- Table structure for table `data_sample`
 --
 
-CREATE TABLE `klasifikasi` (
-  `id_klasifikasi` int(11) NOT NULL,
-  `nama_klasifikasi` varchar(255) NOT NULL,
-  `keterangan` varchar(255) NOT NULL
+CREATE TABLE `data_sample` (
+  `id` int(11) NOT NULL,
+  `nisn` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `absensi` int(11) NOT NULL,
+  `naq` int(11) NOT NULL,
+  `nba` int(11) NOT NULL,
+  `nbi` int(11) NOT NULL,
+  `nbin` int(11) NOT NULL,
+  `nbs` int(11) NOT NULL,
+  `nbtq` int(11) NOT NULL,
+  `nfiqih` int(11) NOT NULL,
+  `nipa` int(11) NOT NULL,
+  `nip` int(11) NOT NULL,
+  `nips` int(11) NOT NULL,
+  `nmtk` int(11) NOT NULL,
+  `npjok` int(11) NOT NULL,
+  `npkn` int(11) NOT NULL,
+  `nprakarya` int(11) NOT NULL,
+  `nqudis` int(11) NOT NULL,
+  `nsb` int(11) NOT NULL,
+  `nilaipraktek` int(11) NOT NULL,
+  `ranking` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `klasifikasi`
+-- Dumping data for table `data_sample`
 --
 
-INSERT INTO `klasifikasi` (`id_klasifikasi`, `nama_klasifikasi`, `keterangan`) VALUES
-(1, 'KLASIFIKASI 1', 'Kelompok yang masuk ke KLASIFIKASI 1'),
-(2, 'KLASIFIKASI 2', 'Kelompok yang masuk KLASIFIKASI 2');
+INSERT INTO `data_sample` (`id`, `nisn`, `nama`, `absensi`, `naq`, `nba`, `nbi`, `nbin`, `nbs`, `nbtq`, `nfiqih`, `nipa`, `nip`, `nips`, `nmtk`, `npjok`, `npkn`, `nprakarya`, `nqudis`, `nsb`, `nilaipraktek`, `ranking`) VALUES
+(1, '66', 'JONO', 3, 3, 3, 3, 4, 3, 4, 4, 0, 0, 3, 0, 4, 3, 1, 3, 4, 4, 'Rank'),
+(2, '77', 'MUHAMMAD KARIM', 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 3, 0, 4, 4, 4, 4, 4, 4, 'Rank'),
+(3, '77', 'JUNAEDI', 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 3, 0, 4, 4, 4, 4, 4, 4, 'Rank');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `matpel`
+-- Table structure for table `data_siswa`
 --
 
-CREATE TABLE `matpel` (
-  `id_matpel` int(11) NOT NULL,
-  `nama_matpel` varchar(255) NOT NULL,
-  `keterangan` varchar(255) NOT NULL
+CREATE TABLE `data_siswa` (
+  `id` int(11) NOT NULL,
+  `nisn` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `absensi` int(11) NOT NULL,
+  `naq` int(11) NOT NULL,
+  `nba` int(11) NOT NULL,
+  `nbi` int(11) NOT NULL,
+  `nbin` int(11) NOT NULL,
+  `nbs` int(11) NOT NULL,
+  `nbtq` int(11) NOT NULL,
+  `nfiqih` int(11) NOT NULL,
+  `nipa` int(11) NOT NULL,
+  `nip` int(11) NOT NULL,
+  `nips` int(11) NOT NULL,
+  `nmtk` int(11) NOT NULL,
+  `npjok` int(11) NOT NULL,
+  `npkn` int(11) NOT NULL,
+  `nprakarya` int(11) NOT NULL,
+  `nqudis` int(11) NOT NULL,
+  `nsb` int(11) NOT NULL,
+  `nilaipraktek` int(11) NOT NULL,
+  `ranking` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `matpel`
+-- Dumping data for table `data_siswa`
 --
 
-INSERT INTO `matpel` (`id_matpel`, `nama_matpel`, `keterangan`) VALUES
-(1, 'Matematika', 'Mata Pelajaran Mipa'),
-(2, 'Bahasa Inggris', 'Mate Pelajaran Bahasa Inggeris'),
-(3, 'Biologi', 'Mate Pelajaran Biologi');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `nilai`
---
-
-CREATE TABLE `nilai` (
-  `id_nilai` int(11) NOT NULL,
-  `id_siswa` int(11) NOT NULL,
-  `id_matpel` int(11) NOT NULL,
-  `nilai` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `nilai`
---
-
-INSERT INTO `nilai` (`id_nilai`, `id_siswa`, `id_matpel`, `nilai`) VALUES
-(2, 1, 3, 3),
-(3, 1, 2, 2),
-(4, 3, 2, 4),
-(7, 3, 3, 4),
-(10, 3, 1, 4),
-(11, 1, 1, 2),
-(12, 4, 2, 4),
-(13, 4, 3, 2),
-(14, 4, 1, 4);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sample`
---
-
-CREATE TABLE `sample` (
-  `id_sample` int(11) NOT NULL,
-  `nis` varchar(255) DEFAULT NULL,
-  `nama_sample` varchar(255) NOT NULL,
-  `kelas` varchar(255) DEFAULT NULL,
-  `keterangan` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `sample`
---
-
-INSERT INTO `sample` (`id_sample`, `nis`, `nama_sample`, `kelas`, `keterangan`) VALUES
-(1, '123456', 'Sample 1', 'IPA 1', 'TIDAK RANK'),
-(2, '123457', 'Sample 2', 'IPA 2', 'RANK'),
-(3, '123458', 'Sample 3', 'IPA 3', 'RANK');
+INSERT INTO `data_siswa` (`id`, `nisn`, `nama`, `absensi`, `naq`, `nba`, `nbi`, `nbin`, `nbs`, `nbtq`, `nfiqih`, `nipa`, `nip`, `nips`, `nmtk`, `npjok`, `npkn`, `nprakarya`, `nqudis`, `nsb`, `nilaipraktek`, `ranking`) VALUES
+(1, '66', 'JONO', 3, 3, 3, 3, 4, 3, 4, 4, 0, 0, 3, 0, 4, 3, 1, 3, 4, 4, ''),
+(2, '77', 'MUHAMMAD KARIM', 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 3, 0, 4, 4, 4, 4, 4, 4, ''),
+(3, '77', 'JUNAEDI', 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 3, 0, 4, 4, 4, 4, 4, 4, '');
 
 -- --------------------------------------------------------
 
@@ -134,57 +122,6 @@ CREATE TABLE `setting` (
 
 INSERT INTO `setting` (`id`, `nama_website`, `logo`, `alamat`, `deskripsi`, `theme`) VALUES
 (0, 'SPK NAIVEBAYES', 'tv-2223047_960_720.png', 'Jl Raya Ciboalang No 21', '@2020', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `siswa`
---
-
-CREATE TABLE `siswa` (
-  `id_siswa` int(11) NOT NULL,
-  `nis` varchar(255) NOT NULL,
-  `nama_siswa` varchar(255) NOT NULL,
-  `kelas` varchar(255) NOT NULL,
-  `klasifikasi` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `siswa`
---
-
-INSERT INTO `siswa` (`id_siswa`, `nis`, `nama_siswa`, `kelas`, `klasifikasi`) VALUES
-(1, '1002', 'Subhan Subhana', 'IPS 3', 'KLASIFIKASI 1'),
-(3, '1003', 'Saepudin', 'IPA 1', 'KLASIFIKASI 2'),
-(4, '1001', 'Muhammad Mahmud', 'IPS 3', 'KLASIFIKASI 1');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `training`
---
-
-CREATE TABLE `training` (
-  `id_training` int(11) NOT NULL,
-  `id_sample` int(11) NOT NULL,
-  `id_matpel` int(11) NOT NULL,
-  `nilai` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `training`
---
-
-INSERT INTO `training` (`id_training`, `id_sample`, `id_matpel`, `nilai`) VALUES
-(2, 1, 3, 3),
-(3, 1, 1, 2),
-(4, 2, 2, 3),
-(5, 2, 3, 4),
-(6, 2, 1, 2),
-(7, 3, 2, 4),
-(8, 3, 3, 2),
-(9, 3, 1, 2),
-(10, 1, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -218,46 +155,22 @@ INSERT INTO `user` (`id_user`, `nip`, `nama_user`, `jenis_kelamin`, `telp`, `ema
 --
 
 --
--- Indexes for table `klasifikasi`
+-- Indexes for table `data_sample`
 --
-ALTER TABLE `klasifikasi`
-  ADD PRIMARY KEY (`id_klasifikasi`,`nama_klasifikasi`);
+ALTER TABLE `data_sample`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `matpel`
+-- Indexes for table `data_siswa`
 --
-ALTER TABLE `matpel`
-  ADD PRIMARY KEY (`id_matpel`);
-
---
--- Indexes for table `nilai`
---
-ALTER TABLE `nilai`
-  ADD PRIMARY KEY (`id_nilai`);
-
---
--- Indexes for table `sample`
---
-ALTER TABLE `sample`
-  ADD PRIMARY KEY (`id_sample`);
+ALTER TABLE `data_siswa`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `setting`
 --
 ALTER TABLE `setting`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `siswa`
---
-ALTER TABLE `siswa`
-  ADD PRIMARY KEY (`id_siswa`);
-
---
--- Indexes for table `training`
---
-ALTER TABLE `training`
-  ADD PRIMARY KEY (`id_training`);
 
 --
 -- Indexes for table `user`
@@ -270,40 +183,16 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `klasifikasi`
+-- AUTO_INCREMENT for table `data_sample`
 --
-ALTER TABLE `klasifikasi`
-  MODIFY `id_klasifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `data_sample`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `matpel`
+-- AUTO_INCREMENT for table `data_siswa`
 --
-ALTER TABLE `matpel`
-  MODIFY `id_matpel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `nilai`
---
-ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `sample`
---
-ALTER TABLE `sample`
-  MODIFY `id_sample` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `siswa`
---
-ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `training`
---
-ALTER TABLE `training`
-  MODIFY `id_training` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `data_siswa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
