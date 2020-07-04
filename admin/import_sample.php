@@ -83,65 +83,26 @@ $siswa = mysqli_query($conn,"SELECT * FROM data_sample");
 <hr>
 <div class="row">
 	<div class="col-sm-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				DATA SAMPLE
-			</div>
-			<div class="panel-body">
-				<div class="table-responsive">
-					<table class="table table-bordered table-striped">
-						<tr>
-							<th>NO</th>
-							<th>nisn</th>
-							<th>nama</th>
-							<th>absensi</th>
-							<th>naq</th>
-							<th>nba</th>
-							<th>nbi</th>
-							<th>nbin</th>
-							<th>nbs</th>
-							<th>nbtq</th>
-							<th>nfiqih</th>
-							<th>nipa</th>
-							<th>nips</th>
-							<th>nmtk</th>
-							<th>npjok</th>
-							<th>npkn</th>
-							<th>nprakarya</th>
-							<th>nqudis</th>
-							<th>nsb</th>
-							<th>nilaipraktek</th>
-							<th>ranking</th>
-						</tr>
-						<?php $no=1; foreach ($siswa as $row): ?>
-						<tr>
-							<th><?= $no++ ?></th>
-							<th><?= $row['nisn'] ?></th>
-							<th><?= $row['nama'] ?></th>
-							<th><?= $row['absensi'] ?></th>
-							<th><?= $row['naq'] ?></th>
-							<th><?= $row['nba'] ?></th>
-							<th><?= $row['nbi'] ?></th>
-							<th><?= $row['nbin'] ?></th>
-							<th><?= $row['nbs'] ?></th>
-							<th><?= $row['nbtq'] ?></th>
-							<th><?= $row['nfiqih'] ?></th>
-							<th><?= $row['nipa'] ?></th>
-							<th><?= $row['nips'] ?></th>
-							<th><?= $row['nmtk'] ?></th>
-							<th><?= $row['npjok'] ?></th>
-							<th><?= $row['npkn'] ?></th>
-							<th><?= $row['nprakarya'] ?></th>
-							<th><?= $row['nqudis'] ?></th>
-							<th><?= $row['nsb'] ?></th>
-							<th><?= $row['nilaipraktek'] ?></th>
-							<th><?= $row['ranking'] ?></th>
-						</tr>
-						<?php endforeach ?>
-					</table>
-				</div>
-			</div>
-		</div>
+
+	<?php
+	$xcrud->table('data_sample');
+	$xcrud->table_name('Data Sample');
+	// $xcrud->fields('ranking',true);
+	// $xcrud->columns('klasifikasi',true);
+
+	$xcrud->unset_view();
+	$xcrud->unset_csv();
+	// $xcrud->unset_limitlist();
+	// $xcrud->unset_numbers();
+	// $xcrud->unset_pagination();
+	$xcrud->unset_print();
+	// $xcrud->unset_sortable();
+	$xcrud->hide_button('save_new');
+	$xcrud->hide_button('save_edit');
+
+	echo $xcrud->render();
+	?>
+
 	</div>
 </div>
 
