@@ -58,6 +58,22 @@ if (isset($_POST['proses'])) {
 #################
 
 ?>
+
+<style>
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+
+    .table-responsive{
+    	overflow-x: unset!important;
+    	overflow-y: unset!important;
+    }
+}
+
+</style>
 <div class="row">
 	<div class="col-sm-12">
 		<div class="panel panel-default">
@@ -186,9 +202,10 @@ if (isset($_POST['proses'])) {
 	</div>
 </div>
 
-	<div class="text-center">
+	<div class="text-center no-print">
 		<form method="post">
 			<button type="submit" name="proses" class="btn btn-primary btn-lg">PROSESS</button>
+			<button type="button" class="btn btn-info btn-lg" onclick="window.print();">PRINT</button>
 			<a href="perhitungan.php" class="btn btn-danger btn-lg">RESET</a>
 		</form>
 	</div>

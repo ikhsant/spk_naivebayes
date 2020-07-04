@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2020 at 03:51 PM
+-- Generation Time: Jul 05, 2020 at 01:12 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -40,7 +40,6 @@ CREATE TABLE `data_sample` (
   `nbtq` int(11) NOT NULL,
   `nfiqih` int(11) NOT NULL,
   `nipa` int(11) NOT NULL,
-  `nip` int(11) NOT NULL,
   `nips` int(11) NOT NULL,
   `nmtk` int(11) NOT NULL,
   `npjok` int(11) NOT NULL,
@@ -56,10 +55,10 @@ CREATE TABLE `data_sample` (
 -- Dumping data for table `data_sample`
 --
 
-INSERT INTO `data_sample` (`id`, `nisn`, `nama`, `absensi`, `naq`, `nba`, `nbi`, `nbin`, `nbs`, `nbtq`, `nfiqih`, `nipa`, `nip`, `nips`, `nmtk`, `npjok`, `npkn`, `nprakarya`, `nqudis`, `nsb`, `nilaipraktek`, `ranking`) VALUES
-(1, '66', 'JONO', 3, 3, 3, 3, 4, 3, 4, 4, 0, 0, 3, 0, 4, 3, 1, 3, 4, 4, 'Rank'),
-(2, '77', 'MUHAMMAD KARIM', 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 3, 0, 4, 4, 4, 4, 4, 4, 'Rank'),
-(3, '77', 'JUNAEDI', 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 3, 0, 4, 4, 4, 4, 4, 4, 'Rank');
+INSERT INTO `data_sample` (`id`, `nisn`, `nama`, `absensi`, `naq`, `nba`, `nbi`, `nbin`, `nbs`, `nbtq`, `nfiqih`, `nipa`, `nips`, `nmtk`, `npjok`, `npkn`, `nprakarya`, `nqudis`, `nsb`, `nilaipraktek`, `ranking`) VALUES
+(1, '66', 'JONO', 3, 3, 3, 3, 4, 3, 4, 3, 4, 4, 3, 4, 3, 1, 3, 4, 4, 'Rank'),
+(2, '77', 'MUHAMMAD KARIM', 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 3, 4, 4, 4, 4, 4, 4, 'Rank'),
+(3, '77', 'JUNAEDI', 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 3, 4, 4, 4, 4, 4, 4, 'Rank');
 
 -- --------------------------------------------------------
 
@@ -80,7 +79,6 @@ CREATE TABLE `data_siswa` (
   `nbtq` int(11) NOT NULL,
   `nfiqih` int(11) NOT NULL,
   `nipa` int(11) NOT NULL,
-  `nip` int(11) NOT NULL,
   `nips` int(11) NOT NULL,
   `nmtk` int(11) NOT NULL,
   `npjok` int(11) NOT NULL,
@@ -96,10 +94,10 @@ CREATE TABLE `data_siswa` (
 -- Dumping data for table `data_siswa`
 --
 
-INSERT INTO `data_siswa` (`id`, `nisn`, `nama`, `absensi`, `naq`, `nba`, `nbi`, `nbin`, `nbs`, `nbtq`, `nfiqih`, `nipa`, `nip`, `nips`, `nmtk`, `npjok`, `npkn`, `nprakarya`, `nqudis`, `nsb`, `nilaipraktek`, `ranking`) VALUES
-(1, '66', 'JONO', 3, 3, 3, 3, 4, 3, 4, 4, 0, 0, 3, 0, 4, 3, 1, 3, 4, 4, ''),
-(2, '77', 'MUHAMMAD KARIM', 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 3, 0, 4, 4, 4, 4, 4, 4, ''),
-(3, '77', 'JUNAEDI', 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 3, 0, 4, 4, 4, 4, 4, 4, '');
+INSERT INTO `data_siswa` (`id`, `nisn`, `nama`, `absensi`, `naq`, `nba`, `nbi`, `nbin`, `nbs`, `nbtq`, `nfiqih`, `nipa`, `nips`, `nmtk`, `npjok`, `npkn`, `nprakarya`, `nqudis`, `nsb`, `nilaipraktek`, `ranking`) VALUES
+(1, '66', 'JONO', 3, 3, 3, 3, 4, 3, 4, 3, 4, 4, 3, 4, 3, 1, 3, 4, 4, ''),
+(2, '77', 'MUHAMMAD KARIM', 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 3, 4, 4, 4, 4, 4, 4, ''),
+(3, '77', 'JUNAEDI', 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 3, 4, 4, 4, 4, 4, 4, '');
 
 -- --------------------------------------------------------
 
