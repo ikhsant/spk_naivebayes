@@ -39,6 +39,8 @@
                      <!--    </ul>
                     </li> -->
                     <!-- <li><a href="matpel.php"><span class="fa fa-book"></span> Mata Pelajaran</a></li> -->
+                    <li><a href="data_siswa.php"><span class="fa fa-users"></span> Data Siswa</a></li>
+                    <li><a href="data_sample.php"><span class="fa fa-users"></span> Data Sample</a></li>
                     <li><a href="import_siswa.php"><span class="fa fa-book"></span> Import Siswa</a></li>
                     <li><a href="import_sample.php"><span class="fa fa-book"></span> Import Sample</a></li>
                     <li><a href="perhitungan2.php"><span class="fa fa-book"></span> Perhitungan</a></li>
