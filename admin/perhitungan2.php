@@ -43,17 +43,20 @@ if (isset($_POST['proses'])) {
 	$classifier->train($sample_semua, $sample_klasifikasi);
 	$hasil = $classifier->predict($siswa_semua);
 
-	foreach ($hasil as $key => $value) {
-		$key++;
-		mysqli_query($conn,"UPDATE data_siswa SET ranking = '$value' WHERE id = '$key' ");
+	$siswa2 = mysqli_query($conn,"SELECT * FROM data_siswa ORDER BY id ASC ");
+	$jumlah_siswa = mysqli_num_rows($siswa2);
+
+	$order = 0;
+	foreach ($siswa2 as $row2) {
+		$id = $row2['id'];
+		mysqli_query($conn,"UPDATE data_siswa SET ranking = '$hasil[$order]' WHERE id = '$id' ");
+		$order++;
 	}
 
 	$_SESSION['pesan'] = 'Berhasil menghitung';
     echo '<script>window.location.replace("perhitungan2.php")</script>';
-	// header('Location: perhitungan2.php');
-	// echo "<pre>";
-	// print_r($hasil);
-	// echo "</pre>";
+	header('Location: perhitungan2.php');
+
 }	
 #################
 
