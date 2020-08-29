@@ -53,14 +53,20 @@ if (isset($_POST['proses'])) {
 		$order++;
 	}
 
+	// echo "<pre>";
+	$session['hasil_count'] = array_count_values($hasil);
+	// echo "</pre>";
+
 	$_SESSION['pesan'] = 'Berhasil menghitung';
-    echo '<script>window.location.replace("perhitungan2.php")</script>';
-	header('Location: perhitungan2.php');
+    // echo '<script>window.location.replace("perhitungan2.php")</script>';
+	// header('Location: perhitungan2.php');
 
 }	
-#################
+
+$hasil_count = $session['hasil_count'];
 
 ?>
+<script type="text/javascript" src="../assets/js/Chart.min.js"></script>
 
 <style>
 @media print
@@ -204,6 +210,11 @@ if (isset($_POST['proses'])) {
 		</div>
 	</div>
 </div>
+	<hr>	
+	<div style="max-width: 400px; margin: auto; margin-bottom: 100px" class="text-center">
+		<h3>Chart</h3>
+		<canvas id="myChart" width="400" height="400"></canvas>
+	</div>
 
 	<div class="text-center no-print">
 		<form method="post">
@@ -213,4 +224,47 @@ if (isset($_POST['proses'])) {
 		</form>
 	</div>
 
+	
+
+<script>
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx, {
+	    type: 'pie',
+	    data: {
+	        labels: [
+	        	<?php foreach ($hasil_count as $key => $row) {
+	    			echo '"'.$key.'",';
+	        	} ?>
+	        ],
+	        datasets: [{
+	            label: '# Kelompok',
+	            data: [
+	            	<?php foreach ($hasil_count as $key => $row) {
+	        			echo '"'.$row.'",';
+	        		} ?>
+	            ],
+	            backgroundColor: [
+	                'rgba(54, 162, 235, 0.2)',
+	                'rgba(255, 99, 132, 0.2)',
+	            ],
+	            borderColor: [
+	                'rgba(54, 162, 235, 1)',
+	                'rgba(255, 99, 132, 1)',
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero: true
+	                }
+	            }]
+	        }
+	    }
+	});
+	</script>
+
 <div style="margin-bottom: 400px"></div>
+	
