@@ -64,6 +64,13 @@ if (isset($_POST['proses'])) {
 }	
 
 $hasil_count = $session['hasil_count'];
+$jumlah = count($hasil);
+$rank = ($hasil_count['Rank'] * 100) / $jumlah;
+$tidak = ($hasil_count['Tidak'] * 100) / $jumlah;
+
+// echo "<pre>";
+// print_r($tidak);
+// echo "</pre>";
 
 ?>
 <script type="text/javascript" src="../assets/js/Chart.min.js"></script>
@@ -231,18 +238,10 @@ $hasil_count = $session['hasil_count'];
 	var myChart = new Chart(ctx, {
 	    type: 'pie',
 	    data: {
-	        labels: [
-	        	<?php foreach ($hasil_count as $key => $row) {
-	    			echo '"'.$key.'",';
-	        	} ?>
-	        ],
+	        labels: ['Rank <?= round($rank,2) ?>%', 'Tidak <?= round($tidak,2) ?>%'],
 	        datasets: [{
 	            label: '# Kelompok',
-	            data: [
-	            	<?php foreach ($hasil_count as $key => $row) {
-	        			echo '"'.$row.'",';
-	        		} ?>
-	            ],
+	            data: [<?= round($rank,2) ?>, <?= round($tidak,2) ?>],
 	            backgroundColor: [
 	                'rgba(54, 162, 235, 0.2)',
 	                'rgba(255, 99, 132, 0.2)',
